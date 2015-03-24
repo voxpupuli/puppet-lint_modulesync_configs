@@ -3,7 +3,7 @@ Puppet-lint ModuleSync Configs
 
 This repository contains default configuration for
 [modulesync](http://github.com/puppetlabs/modulesync) for the Puppet-lint
-plugins at Puppet communit.
+plugins at Puppet community.
 Changes to this repository should be synced with modulesync
 across all of the Puppet-lint plugins.
 
