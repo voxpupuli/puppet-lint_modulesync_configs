@@ -8,5 +8,5 @@
 - puppet-lint-spaceship_operator_without_tag-check
 - puppet-lint-trailing_comma-check
 - puppet-lint-undef_in_function-check
-- puppet-lint-unquoted_string-check$
+- puppet-lint-unquoted_string-check
 - puppet-lint-version_comparison-check
