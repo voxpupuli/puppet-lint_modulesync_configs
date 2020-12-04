@@ -1,10 +1,14 @@
 ---
 - puppet-lint-absolute_classname-check
+- puppet-lint-anchor-check
 - puppet-lint-appends-check
 - puppet-lint-classes_and_types_beginning_with_digits-check
 - puppet-lint-empty_string-check
 - puppet-lint-file_ensure-check
 - puppet-lint-leading_zero-check
+- puppet-lint-param-docs
+- puppet-lint-reference_on_declaration_outside_of_class-check
+- puppet-lint-resource_reference_syntax
 - puppet-lint-spaceship_operator_without_tag-check
 - puppet-lint-trailing_comma-check
 - puppet-lint-undef_in_function-check
