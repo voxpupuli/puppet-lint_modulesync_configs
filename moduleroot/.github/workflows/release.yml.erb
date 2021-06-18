@@ -7,7 +7,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.repository_owner == '<%= @configs[:namespace] %> %>'
+    if: github.repository_owner == '<%= @configs[:namespace] %>'
     steps:
       - uses: actions/checkout@v2
       - name: Install Ruby 3.0
