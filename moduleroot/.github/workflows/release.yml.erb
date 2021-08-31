@@ -15,6 +15,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
+          bundler: 'none'
       - name: Build gem
         run: gem build *.gemspec
       - name: Publish gem to rubygems.org
