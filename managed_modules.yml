@@ -6,6 +6,7 @@
 - puppet-lint-empty_string-check
 - puppet-lint-file_ensure-check
 - puppet-lint-leading_zero-check
+- puppet-lint-lookup_in_parameter-check
 - puppet-lint-optional_default-check
 - puppet-lint-param-docs
 - puppet-lint-reference_on_declaration_outside_of_class-check
