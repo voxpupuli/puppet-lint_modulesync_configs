@@ -17,3 +17,4 @@
 - puppet-lint-undef_in_function-check
 - puppet-lint-unquoted_string-check
 - puppet-lint-version_comparison-check
+- puppet-lint-params_empty_string-check
