@@ -1,8 +1,11 @@
 name: Test
 
 on:
-  - pull_request
-  - push
+  pull_request: {}
+  push:
+    branches:
+      - master
+      - main
 
 env:
   BUNDLE_WITHOUT: release
