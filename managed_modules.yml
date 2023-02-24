@@ -7,6 +7,7 @@
 - puppet-lint-lookup_in_parameter-check
 - puppet-lint-optional_default-check
 - puppet-lint-param-docs
+- puppet-lint-param-types
 - puppet-lint-params_empty_string-check
 - puppet-lint-reference_on_declaration_outside_of_class-check
 - puppet-lint-resource_reference_syntax
