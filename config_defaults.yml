@@ -1,3 +1,5 @@
 ---
 .travis.yml:
   delete: true
+.github/dependabot.yml:
+  delete: true
