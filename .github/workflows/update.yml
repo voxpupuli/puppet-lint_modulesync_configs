@@ -1,10 +1,11 @@
+---
 name: Update all puppet-lint plugins
 
 on:
   workflow_dispatch: {}
-  #push:
-  #  branches:
-  #    - master
+  push:
+    tags:
+      - '*'
 
 env:
   GIT_AUTHOR_NAME: pccibot
