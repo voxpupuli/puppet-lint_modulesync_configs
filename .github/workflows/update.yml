@@ -37,4 +37,9 @@ jobs:
         env:
           # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
           GITHUB_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
-        run: bundle exec msync update --verbose
+        run: |
+          bundle exec msync update --verbose \
+            --pr \
+            --pr-labels modulesync \
+            --pr-title "modulesync $(git describe)" \
+            --message "modulesync $(git describe)"
