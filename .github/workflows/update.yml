@@ -25,7 +25,6 @@ jobs:
           ruby-version: 3.4
           bundler-cache: true
       - name: Add SSH key
-        env:
         run: |
             mkdir -p /home/runner/.ssh
             echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > /home/runner/.ssh/github_actions
