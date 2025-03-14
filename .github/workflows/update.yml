@@ -11,6 +11,7 @@ env:
   GIT_AUTHOR_EMAIL: voxpupuli@users.noreply.github.com
   GIT_COMMITTER_NAME: pccibot
   GIT_COMMITTER_EMAIL: voxpupuli@users.noreply.github.com
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
 jobs:
   unit:
@@ -23,7 +24,15 @@ jobs:
         with:
           ruby-version: 3.4
           bundler-cache: true
+      - name: Add SSH key
+        env:
+        run: |
+            mkdir -p /home/runner/.ssh
+            echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > /home/runner/.ssh/github_actions
+            chmod 600 /home/runner/.ssh/github_actions
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add /home/runner/.ssh/github_actions
       - name: set git config
         run: git config --global user.email 'voxpupuli@users.noreply.github.com' && git config --global user.name 'pccibot'
       - name: Run msync
-        run: bundle exec msync update --git-base=https://github.com/ --verbose
+        run: bundle exec msync update --verbose
