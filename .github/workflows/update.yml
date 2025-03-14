@@ -26,4 +26,4 @@ jobs:
       - name: set git config
         run: git config --global user.email 'voxpupuli@users.noreply.github.com' && git config --global user.name 'pccibot'
       - name: Run msync
-        run: bundle exec msync update --git-base=https://github.com/
+        run: bundle exec msync update --git-base=https://github.com/ --verbose
