@@ -34,4 +34,7 @@ jobs:
       - name: set git config
         run: git config --global user.email 'voxpupuli@users.noreply.github.com' && git config --global user.name 'pccibot'
       - name: Run msync
+        env:
+          # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
+          GITHUB_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
         run: bundle exec msync update --verbose
