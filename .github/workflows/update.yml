@@ -12,6 +12,7 @@ env:
   GIT_COMMITTER_NAME: pccibot
   GIT_COMMITTER_EMAIL: voxpupuli@users.noreply.github.com
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  GITHUB_BASE_URL: https://api.github.com
 
 jobs:
   unit:
