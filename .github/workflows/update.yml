@@ -46,6 +46,7 @@ jobs:
           git config --global user.name 'pccibot'
           git config --global gpg.format ssh
           git config --global user.signingkey ~/.ssh/github_actions
+          git config --global commit.gpgsign true
       - name: Run msync
         env:
           # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
