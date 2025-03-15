@@ -9,9 +9,9 @@ on:
 
 env:
   GIT_AUTHOR_NAME: pccibot
-  GIT_AUTHOR_EMAIL: voxpupuli@users.noreply.github.com
+  GIT_AUTHOR_EMAIL: 12855858+pccibot@users.noreply.github.com
   GIT_COMMITTER_NAME: pccibot
-  GIT_COMMITTER_EMAIL: voxpupuli@users.noreply.github.com
+  GIT_COMMITTER_EMAIL: 12855858+pccibot@users.noreply.github.com
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
   GITHUB_BASE_URL: https://api.github.com
 
@@ -42,7 +42,7 @@ jobs:
             ssh-add ~/.ssh/github_actions
       - name: set git user & email & commit signing
         run: |
-          git config --global user.email 'voxpupuli@users.noreply.github.com'
+          git config --global user.email '12855858+pccibot@users.noreply.github.com'
           git config --global user.name 'pccibot'
           git config --global gpg.format ssh
           git config --global user.signingkey ~/.ssh/github_actions
