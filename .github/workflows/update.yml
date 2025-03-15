@@ -21,6 +21,10 @@ jobs:
     name: Run msync against all modules
     steps:
       - name: checkout code
+        # the action has a ssh-key option.
+        # when provided, it configures the ssh/git config to authenticate automatically with that key to the source repo
+        # the authentication won't be used for other repos (which we need for msync), so we cannot use the option
+        # that's the reason for the 'Add SSH key' step
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -31,13 +35,17 @@ jobs:
           bundler-cache: true
       - name: Add SSH key
         run: |
-            mkdir -p /home/runner/.ssh
-            echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > /home/runner/.ssh/github_actions
-            chmod 600 /home/runner/.ssh/github_actions
+            mkdir -p ~/.ssh
+            echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > ~/.ssh/github_actions
+            chmod 600 ~/.ssh/github_actions
             ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add /home/runner/.ssh/github_actions
-      - name: set git config
-        run: git config --global user.email 'voxpupuli@users.noreply.github.com' && git config --global user.name 'pccibot'
+            ssh-add ~/.ssh/github_actions
+      - name: set git user & email & commit signing
+        run: |
+          git config --global user.email 'voxpupuli@users.noreply.github.com'
+          git config --global user.name 'pccibot'
+          git config --global gpg.format ssh
+          git config --global user.signingkey ~/.ssh/github_actions
       - name: Run msync
         env:
           # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
