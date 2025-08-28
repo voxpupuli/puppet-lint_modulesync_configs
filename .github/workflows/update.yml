@@ -22,7 +22,7 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     name: Run msync against all modules
-    if: github.repository_owner == voxpupuli
+    if: github.repository_owner == 'voxpupuli'
     steps:
       - name: checkout code
         # the action has a ssh-key option.

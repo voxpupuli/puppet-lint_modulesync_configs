@@ -1,0 +1,26 @@
+---
+name: Create github release
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    name: Create GitHub release
+    if: ${{ github.repository_owner == 'voxpupuli' }}
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Create Release Page
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create --repo ${{ github.repository }} ${{ github.ref_name }} --generate-notes
