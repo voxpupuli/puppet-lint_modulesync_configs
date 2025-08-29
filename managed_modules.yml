@@ -1,7 +1,9 @@
 ---
+- puppet-ghostbuster
 - puppet-lint-absolute_classname-check
 - puppet-lint-anchor-check
 - puppet-lint-appends-check
+- puppet-lint-exec_idempotency-check
 - puppet-lint-file_ensure-check
 - puppet-lint-leading_zero-check
 - puppet-lint-lookup_in_parameter-check
@@ -20,4 +22,3 @@
 - puppet-lint-unquoted_string-check
 - puppet-lint-variable_contains_upcase
 - puppet-lint-version_comparison-check
-- puppet-ghostbuster
